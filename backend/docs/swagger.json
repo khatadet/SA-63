@@ -1,0 +1,1898 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server for SUT SE 2563",
+        "title": "SUT SA Example API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api/v1",
+    "paths": {
+        "/Insurances": {
+            "post": {
+                "description": "Create Insurance",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create Insurance",
+                "operationId": "create-Insurance",
+                "parameters": [
+                    {
+                        "description": "Insurance entity",
+                        "name": "Insurance",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.Insurance"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.Insurance"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/RoomStatuss": {
+            "post": {
+                "description": "Create RoomStatus",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create RoomStatus",
+                "operationId": "create-RoomStatus",
+                "parameters": [
+                    {
+                        "description": "RoomStatus entity",
+                        "name": "RoomStatus",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.RoomStatus"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.RoomStatus"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/RoomTypes": {
+            "post": {
+                "description": "Create RoomType",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create RoomType",
+                "operationId": "create-RoomType",
+                "parameters": [
+                    {
+                        "description": "RoomType entity",
+                        "name": "RoomType",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.RoomType"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.RoomType"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/Roomages": {
+            "post": {
+                "description": "Create Roomage",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create Roomage",
+                "operationId": "create-Roomage",
+                "parameters": [
+                    {
+                        "description": "Roomage entity",
+                        "name": "Roomage",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.Roomage"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.Roomage"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/Rooms": {
+            "post": {
+                "description": "Create Room",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create Room",
+                "operationId": "create-Room",
+                "parameters": [
+                    {
+                        "description": "Room entity",
+                        "name": "Room",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.Room"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.Room"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/UserStatuss": {
+            "post": {
+                "description": "Create UserStatus",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create UserStatus",
+                "operationId": "create-UserStatus",
+                "parameters": [
+                    {
+                        "description": "UserStatus entity",
+                        "name": "UserStatus",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.UserStatus"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.UserStatus"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/insurances": {
+            "get": {
+                "description": "list insurance entities",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "List insurance entities",
+                "operationId": "list-insurance",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ent.Insurance"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/insurances/{id}": {
+            "get": {
+                "description": "get Insurance by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get a Insurance entity by ID",
+                "operationId": "get-insurance",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Insurance ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.Insurance"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "update insurance by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update a insurance entity by ID",
+                "operationId": "update-insurance",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Insurance ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Insurance entity",
+                        "name": "insurance",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.Insurance"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.Insurance"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/rents": {
+            "get": {
+                "description": "list rent entities",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "List rent entities",
+                "operationId": "list-rent",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ent.Rent"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create Rent",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create Rent",
+                "operationId": "create-Rent",
+                "parameters": [
+                    {
+                        "description": "Rent entity",
+                        "name": "Rent",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controllers.Rent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.Rent"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/rents/{id}": {
+            "get": {
+                "description": "get Rent by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get a Rent entity by ID",
+                "operationId": "get-rent",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Rent ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.Rent"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "get rent by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete a rent entity by ID",
+                "operationId": "delete-rent",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Rent ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/roomages": {
+            "get": {
+                "description": "list roomage entities",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "List roomage entities",
+                "operationId": "list-roomage",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ent.Roomage"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/roomages/{id}": {
+            "get": {
+                "description": "get Roomage by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get a Roomage entity by ID",
+                "operationId": "get-roomage",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Roomage ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.Roomage"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "update roomage by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update a roomage entity by ID",
+                "operationId": "update-roomage",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Roomage ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Roomage entity",
+                        "name": "roomage",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.Roomage"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.Roomage"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/rooms": {
+            "get": {
+                "description": "list room entities",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "List room entities",
+                "operationId": "list-room",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ent.Room"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/rooms/{id}": {
+            "get": {
+                "description": "get Room by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get a Room entity by ID",
+                "operationId": "get-room",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Room ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.Room"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "update room by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update a room entity by ID",
+                "operationId": "update-room",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Room ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Room entity",
+                        "name": "room",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.Room"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.Room"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/roomstatuss": {
+            "get": {
+                "description": "list roomstatus entities",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "List roomstatus entities",
+                "operationId": "list-roomstatus",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ent.RoomStatus"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/roomstatuss/{id}": {
+            "get": {
+                "description": "get RoomStatus by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get a RoomStatus entity by ID",
+                "operationId": "get-roomstatus",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "RoomStatus ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.RoomStatus"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "update roomstatus by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update a roomstatus entity by ID",
+                "operationId": "update-roomstatus",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "RoomStatus ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "RoomStatus entity",
+                        "name": "roomstatus",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.RoomStatus"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.RoomStatus"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/roomtypes": {
+            "get": {
+                "description": "list roomtype entities",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "List roomtype entities",
+                "operationId": "list-roomtype",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ent.RoomType"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/roomtypes/{id}": {
+            "get": {
+                "description": "get RoomType by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get a RoomType entity by ID",
+                "operationId": "get-roomtype",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "RoomType ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.RoomType"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "update roomtype by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update a roomtype entity by ID",
+                "operationId": "update-roomtype",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "RoomType ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "RoomType entity",
+                        "name": "roomtype",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.RoomType"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.RoomType"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "description": "list user entities",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "List user entities",
+                "operationId": "list-user",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ent.User"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create user",
+                "operationId": "create-user",
+                "parameters": [
+                    {
+                        "description": "User entity",
+                        "name": "user",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.User"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}": {
+            "get": {
+                "description": "get user by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get a user entity by ID",
+                "operationId": "get-user",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "User ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.User"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "update user by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update a user entity by ID",
+                "operationId": "update-user",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "User ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "User entity",
+                        "name": "user",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.User"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "get user by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete a user entity by ID",
+                "operationId": "delete-user",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "User ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/userstatuss": {
+            "get": {
+                "description": "list userstatus entities",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "List userstatus entities",
+                "operationId": "list-userstatus",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ent.UserStatus"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/userstatuss/{id}": {
+            "get": {
+                "description": "get UserStatus by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get a UserStatus entity by ID",
+                "operationId": "get-userstatus",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "UserStatus ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.UserStatus"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "update userstatus by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update a userstatus entity by ID",
+                "operationId": "update-userstatus",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "UserStatus ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "UserStatus entity",
+                        "name": "userstatus",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ent.UserStatus"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ent.UserStatus"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/gin.H"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "controllers.Rent": {
+            "type": "object",
+            "properties": {
+                "cidUser": {
+                    "type": "string"
+                },
+                "insurance": {
+                    "type": "integer"
+                },
+                "rentAge": {
+                    "type": "string"
+                },
+                "rentDate": {
+                    "type": "string"
+                },
+                "room": {
+                    "type": "integer"
+                },
+                "roomage": {
+                    "type": "integer"
+                },
+                "user": {
+                    "type": "integer"
+                }
+            }
+        },
+        "ent.Insurance": {
+            "type": "object",
+            "properties": {
+                "Insurance": {
+                    "description": "Insurance holds the value of the \"Insurance\" field.",
+                    "type": "integer"
+                },
+                "edges": {
+                    "description": "Edges holds the relations/edges for other nodes in the graph.\nThe values are being populated by the InsuranceQuery when eager-loading is set.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.InsuranceEdges"
+                },
+                "id": {
+                    "description": "ID of the ent.",
+                    "type": "integer"
+                }
+            }
+        },
+        "ent.InsuranceEdges": {
+            "type": "object",
+            "properties": {
+                "insuranceRent": {
+                    "description": "InsuranceRent holds the value of the InsuranceRent edge.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ent.Rent"
+                    }
+                }
+            }
+        },
+        "ent.Rent": {
+            "type": "object",
+            "properties": {
+                "CidUser": {
+                    "description": "CidUser holds the value of the \"CidUser\" field.",
+                    "type": "string"
+                },
+                "RentAge": {
+                    "description": "RentAge holds the value of the \"RentAge\" field.",
+                    "type": "string"
+                },
+                "RentDate": {
+                    "description": "RentDate holds the value of the \"RentDate\" field.",
+                    "type": "string"
+                },
+                "edges": {
+                    "description": "Edges holds the relations/edges for other nodes in the graph.\nThe values are being populated by the RentQuery when eager-loading is set.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.RentEdges"
+                },
+                "id": {
+                    "description": "ID of the ent.",
+                    "type": "integer"
+                }
+            }
+        },
+        "ent.RentEdges": {
+            "type": "object",
+            "properties": {
+                "rentInsurance": {
+                    "description": "RentInsurance holds the value of the RentInsurance edge.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.Insurance"
+                },
+                "rentRoom": {
+                    "description": "RentRoom holds the value of the RentRoom edge.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.Room"
+                },
+                "rentRoomage": {
+                    "description": "RentRoomage holds the value of the RentRoomage edge.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.Roomage"
+                },
+                "rentUser": {
+                    "description": "RentUser holds the value of the RentUser edge.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.User"
+                }
+            }
+        },
+        "ent.Room": {
+            "type": "object",
+            "properties": {
+                "edges": {
+                    "description": "Edges holds the relations/edges for other nodes in the graph.\nThe values are being populated by the RoomQuery when eager-loading is set.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.RoomEdges"
+                },
+                "id": {
+                    "description": "ID of the ent.",
+                    "type": "integer"
+                }
+            }
+        },
+        "ent.RoomEdges": {
+            "type": "object",
+            "properties": {
+                "roomRent": {
+                    "description": "RoomRent holds the value of the RoomRent edge.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ent.Rent"
+                    }
+                },
+                "roomRoomstatus": {
+                    "description": "RoomRoomstatus holds the value of the RoomRoomstatus edge.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.RoomStatus"
+                },
+                "roomRoomtype": {
+                    "description": "RoomRoomtype holds the value of the RoomRoomtype edge.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.RoomType"
+                }
+            }
+        },
+        "ent.RoomStatus": {
+            "type": "object",
+            "properties": {
+                "RoomStatus": {
+                    "description": "RoomStatus holds the value of the \"RoomStatus\" field.",
+                    "type": "string"
+                },
+                "edges": {
+                    "description": "Edges holds the relations/edges for other nodes in the graph.\nThe values are being populated by the RoomStatusQuery when eager-loading is set.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.RoomStatusEdges"
+                },
+                "id": {
+                    "description": "ID of the ent.",
+                    "type": "integer"
+                }
+            }
+        },
+        "ent.RoomStatusEdges": {
+            "type": "object",
+            "properties": {
+                "roomstatusRoom": {
+                    "description": "RoomstatusRoom holds the value of the RoomstatusRoom edge.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ent.Room"
+                    }
+                }
+            }
+        },
+        "ent.RoomType": {
+            "type": "object",
+            "properties": {
+                "COST": {
+                    "description": "COST holds the value of the \"COST\" field.",
+                    "type": "integer"
+                },
+                "RoomType": {
+                    "description": "RoomType holds the value of the \"RoomType\" field.",
+                    "type": "string"
+                },
+                "edges": {
+                    "description": "Edges holds the relations/edges for other nodes in the graph.\nThe values are being populated by the RoomTypeQuery when eager-loading is set.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.RoomTypeEdges"
+                },
+                "id": {
+                    "description": "ID of the ent.",
+                    "type": "integer"
+                }
+            }
+        },
+        "ent.RoomTypeEdges": {
+            "type": "object",
+            "properties": {
+                "roomtypeRoom": {
+                    "description": "RoomtypeRoom holds the value of the RoomtypeRoom edge.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ent.Room"
+                    }
+                }
+            }
+        },
+        "ent.Roomage": {
+            "type": "object",
+            "properties": {
+                "RoomAge": {
+                    "description": "RoomAge holds the value of the \"RoomAge\" field.",
+                    "type": "integer"
+                },
+                "Text": {
+                    "description": "Text holds the value of the \"Text\" field.",
+                    "type": "string"
+                },
+                "edges": {
+                    "description": "Edges holds the relations/edges for other nodes in the graph.\nThe values are being populated by the RoomageQuery when eager-loading is set.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.RoomageEdges"
+                },
+                "id": {
+                    "description": "ID of the ent.",
+                    "type": "integer"
+                }
+            }
+        },
+        "ent.RoomageEdges": {
+            "type": "object",
+            "properties": {
+                "roomageRent": {
+                    "description": "RoomageRent holds the value of the RoomageRent edge.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ent.Rent"
+                    }
+                }
+            }
+        },
+        "ent.User": {
+            "type": "object",
+            "properties": {
+                "NAME": {
+                    "description": "NAME holds the value of the \"NAME\" field.",
+                    "type": "string"
+                },
+                "UserEmail": {
+                    "description": "UserEmail holds the value of the \"UserEmail\" field.",
+                    "type": "string"
+                },
+                "edges": {
+                    "description": "Edges holds the relations/edges for other nodes in the graph.\nThe values are being populated by the UserQuery when eager-loading is set.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.UserEdges"
+                },
+                "id": {
+                    "description": "ID of the ent.",
+                    "type": "integer"
+                }
+            }
+        },
+        "ent.UserEdges": {
+            "type": "object",
+            "properties": {
+                "userRent": {
+                    "description": "UserRent holds the value of the UserRent edge.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ent.Rent"
+                    }
+                },
+                "userUserstatus": {
+                    "description": "UserUserstatus holds the value of the UserUserstatus edge.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.UserStatus"
+                }
+            }
+        },
+        "ent.UserStatus": {
+            "type": "object",
+            "properties": {
+                "UserStatus": {
+                    "description": "UserStatus holds the value of the \"UserStatus\" field.",
+                    "type": "string"
+                },
+                "edges": {
+                    "description": "Edges holds the relations/edges for other nodes in the graph.\nThe values are being populated by the UserStatusQuery when eager-loading is set.",
+                    "type": "object",
+                    "$ref": "#/definitions/ent.UserStatusEdges"
+                },
+                "id": {
+                    "description": "ID of the ent.",
+                    "type": "integer"
+                }
+            }
+        },
+        "ent.UserStatusEdges": {
+            "type": "object",
+            "properties": {
+                "userstatusUser": {
+                    "description": "UserstatusUser holds the value of the UserstatusUser edge.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ent.User"
+                    }
+                }
+            }
+        },
+        "gin.H": {
+            "type": "object",
+            "additionalProperties": true
+        }
+    },
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        },
+        "BasicAuth": {
+            "type": "basic"
+        },
+        "OAuth2AccessCode": {
+            "type": "oauth2",
+            "flow": "accessCode",
+            "authorizationUrl": "https://example.com/oauth/authorize",
+            "tokenUrl": "https://example.com/oauth/token",
+            "scopes": {
+                "admin": " Grants read and write access to administrative information"
+            }
+        },
+        "OAuth2Application": {
+            "type": "oauth2",
+            "flow": "application",
+            "tokenUrl": "https://example.com/oauth/token",
+            "scopes": {
+                "admin": " Grants read and write access to administrative information",
+                "write": " Grants write access"
+            }
+        },
+        "OAuth2Implicit": {
+            "type": "oauth2",
+            "flow": "implicit",
+            "authorizationUrl": "https://example.com/oauth/authorize",
+            "scopes": {
+                "admin": " Grants read and write access to administrative information",
+                "write": " Grants write access"
+            }
+        },
+        "OAuth2Password": {
+            "type": "oauth2",
+            "flow": "password",
+            "tokenUrl": "https://example.com/oauth/token",
+            "scopes": {
+                "admin": " Grants read and write access to administrative information",
+                "read": " Grants read access",
+                "write": " Grants write access"
+            }
+        }
+    }
+}
