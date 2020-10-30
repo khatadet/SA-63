@@ -82,6 +82,9 @@ definitions:
     type: object
   ent.Room:
     properties:
+      RoomName:
+        description: RoomName holds the value of the "RoomName" field.
+        type: string
       edges:
         $ref: '#/definitions/ent.RoomEdges'
         description: |-

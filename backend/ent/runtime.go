@@ -2,8 +2,27 @@
 
 package ent
 
+import (
+	"github.com/PON/app/ent/rent"
+	"github.com/PON/app/ent/schema"
+)
+
 // The init function reads all schema descriptors with runtime
 // code (default values, validators or hooks) and stitches it
 // to their package variables.
 func init() {
+	rentFields := schema.Rent{}.Fields()
+	_ = rentFields
+	// rentDescRentAge is the schema descriptor for RentAge field.
+	rentDescRentAge := rentFields[0].Descriptor()
+	// rent.RentAgeValidator is a validator for the "RentAge" field. It is called by the builders before save.
+	rent.RentAgeValidator = rentDescRentAge.Validators[0].(func(string) error)
+	// rentDescCidUser is the schema descriptor for CidUser field.
+	rentDescCidUser := rentFields[1].Descriptor()
+	// rent.CidUserValidator is a validator for the "CidUser" field. It is called by the builders before save.
+	rent.CidUserValidator = rentDescCidUser.Validators[0].(func(string) error)
+	// rentDescRentDate is the schema descriptor for RentDate field.
+	rentDescRentDate := rentFields[2].Descriptor()
+	// rent.RentDateValidator is a validator for the "RentDate" field. It is called by the builders before save.
+	rent.RentDateValidator = rentDescRentDate.Validators[0].(func(string) error)
 }

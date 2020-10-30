@@ -19,7 +19,7 @@ func (User) Fields() []ent.Field {
 
 
 
-		field.String("UserEmail"),
+		field.String("UserEmail").Unique(),
 
         field.String("NAME"),
 			

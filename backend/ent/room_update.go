@@ -30,6 +30,12 @@ func (ru *RoomUpdate) Where(ps ...predicate.Room) *RoomUpdate {
 	return ru
 }
 
+// SetRoomName sets the RoomName field.
+func (ru *RoomUpdate) SetRoomName(s string) *RoomUpdate {
+	ru.mutation.SetRoomName(s)
+	return ru
+}
+
 // SetRoomRoomstatusID sets the RoomRoomstatus edge to RoomStatus by id.
 func (ru *RoomUpdate) SetRoomRoomstatusID(id int) *RoomUpdate {
 	ru.mutation.SetRoomRoomstatusID(id)
@@ -185,6 +191,13 @@ func (ru *RoomUpdate) sqlSave(ctx context.Context) (n int, err error) {
 			}
 		}
 	}
+	if value, ok := ru.mutation.RoomName(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: room.FieldRoomName,
+		})
+	}
 	if ru.mutation.RoomRoomstatusCleared() {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.M2O,
@@ -309,6 +322,12 @@ type RoomUpdateOne struct {
 	config
 	hooks    []Hook
 	mutation *RoomMutation
+}
+
+// SetRoomName sets the RoomName field.
+func (ruo *RoomUpdateOne) SetRoomName(s string) *RoomUpdateOne {
+	ruo.mutation.SetRoomName(s)
+	return ruo
 }
 
 // SetRoomRoomstatusID sets the RoomRoomstatus edge to RoomStatus by id.
@@ -464,6 +483,13 @@ func (ruo *RoomUpdateOne) sqlSave(ctx context.Context) (r *Room, err error) {
 		return nil, &ValidationError{Name: "ID", err: fmt.Errorf("missing Room.ID for update")}
 	}
 	_spec.Node.ID.Value = id
+	if value, ok := ruo.mutation.RoomName(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: room.FieldRoomName,
+		})
+	}
 	if ruo.mutation.RoomRoomstatusCleared() {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.M2O,

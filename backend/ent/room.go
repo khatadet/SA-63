@@ -14,9 +14,11 @@ import (
 
 // Room is the model entity for the Room schema.
 type Room struct {
-	config
+	config `json:"-"`
 	// ID of the ent.
 	ID int `json:"id,omitempty"`
+	// RoomName holds the value of the "RoomName" field.
+	RoomName string `json:"RoomName,omitempty"`
 	// Edges holds the relations/edges for other nodes in the graph.
 	// The values are being populated by the RoomQuery when eager-loading is set.
 	Edges                       RoomEdges `json:"edges"`
@@ -77,7 +79,8 @@ func (e RoomEdges) RoomRentOrErr() ([]*Rent, error) {
 // scanValues returns the types for scanning values from sql.Rows.
 func (*Room) scanValues() []interface{} {
 	return []interface{}{
-		&sql.NullInt64{}, // id
+		&sql.NullInt64{},  // id
+		&sql.NullString{}, // RoomName
 	}
 }
 
@@ -101,7 +104,12 @@ func (r *Room) assignValues(values ...interface{}) error {
 	}
 	r.ID = int(value.Int64)
 	values = values[1:]
-	values = values[0:]
+	if value, ok := values[0].(*sql.NullString); !ok {
+		return fmt.Errorf("unexpected type %T for field RoomName", values[0])
+	} else if value.Valid {
+		r.RoomName = value.String
+	}
+	values = values[1:]
 	if len(values) == len(room.ForeignKeys) {
 		if value, ok := values[0].(*sql.NullInt64); !ok {
 			return fmt.Errorf("unexpected type %T for edge-field room_status_roomstatus_room", value)
@@ -157,6 +165,8 @@ func (r *Room) String() string {
 	var builder strings.Builder
 	builder.WriteString("Room(")
 	builder.WriteString(fmt.Sprintf("id=%v", r.ID))
+	builder.WriteString(", RoomName=")
+	builder.WriteString(r.RoomName)
 	builder.WriteByte(')')
 	return builder.String()
 }

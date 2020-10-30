@@ -4,14 +4,12 @@ import { Content, Header, Page, pageTheme, ContentHeader, } from '@backstage/cor
 
 import {
 
-  //Container,
-  //Grid,
   FormControl,
   Select,
   InputLabel,
   MenuItem,
   TextField,
-  //Avatar,
+ 
   Link,
   Button,
 } from '@material-ui/core';
@@ -28,11 +26,7 @@ import { Alert } from '@material-ui/lab';
 
 
 import { Link as RouterLink } from 'react-router-dom';
-/*
-const HeaderCustom = {
-  minHeight: '50px',
-};
-*/
+
 // css style 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -186,6 +180,11 @@ const NewRent: FC<{}> = () => {
     } else {
       setAlert(false);
     }
+
+    const timer = setTimeout(() => {
+      setStatus(false);
+    }, 1000);
+ 
   
   };
   
@@ -255,7 +254,7 @@ const NewRent: FC<{}> = () => {
          <FormControl variant="filled" className={classes.formControl}>
           <TextField
                name="rentAge"
-               label="RentAge"
+               label="ระยะเวลาสัญญา"
                variant="outlined"
                type="string"
                size="medium"
@@ -267,7 +266,7 @@ const NewRent: FC<{}> = () => {
           </FormControl>
           
           <FormControl variant="outlined" className={classes.formControl}>
-                <InputLabel>Roomage</InputLabel>
+                <InputLabel>หน่วยระยะเวลาสัญญา</InputLabel>
                 <Select
                   name="roomage"
                   value={Rent.roomage}
@@ -291,7 +290,7 @@ const NewRent: FC<{}> = () => {
          <form noValidate autoComplete="off">
 
          <FormControl variant="outlined" className={classes.formControl}>
-                <InputLabel>Room</InputLabel>
+                <InputLabel>ห้อง</InputLabel>
                 <Select
                   name="room"
                   value={Rent.room}
@@ -300,7 +299,7 @@ const NewRent: FC<{}> = () => {
                   {Room.map(item => {
                     return (
                       <MenuItem key={item.id} value={item.id}>
-                        {item.id}
+                        {item.roomName}
                       </MenuItem>
                     );
                   })}
@@ -311,7 +310,7 @@ const NewRent: FC<{}> = () => {
  
         
               <FormControl variant="outlined" className={classes.formControl}>
-                <InputLabel>Insurance</InputLabel>
+                <InputLabel>ราคามัดจำ</InputLabel>
                 <Select
                   name="insurance"
                   value={Rent.insurance}
@@ -359,7 +358,7 @@ const NewRent: FC<{}> = () => {
                   {User.map(item => {
                     return (
                       <MenuItem key={item.id} value={item.id}>
-                        {item.userEmail}
+                        {item.nAME}
                       </MenuItem>
                     );
                   })}
@@ -381,7 +380,7 @@ const NewRent: FC<{}> = () => {
          <FormControl variant="filled" className={classes.formControl}>
           <TextField
                name="cidUser"
-               label="CidUser"
+               label="CID"
                variant="outlined"
                type="string"
                size="medium"
@@ -420,7 +419,7 @@ const NewRent: FC<{}> = () => {
                Submit
              </Button>
               
-         <Link component={RouterLink} to="">
+         <Link component={RouterLink} to="/">
            <Button variant="contained" color="primary">
            กลับสู่หน้าหลัก
            </Button>

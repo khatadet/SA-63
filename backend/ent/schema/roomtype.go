@@ -17,8 +17,8 @@ func (RoomType) Fields() []ent.Field {
 	return []ent.Field{
 
 
-		field.String("RoomType"),
-		field.Int("COST"),
+		field.String("RoomType").Unique(),
+		field.Int("COST").Unique(),
     }
 }
 

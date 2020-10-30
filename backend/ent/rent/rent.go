@@ -70,3 +70,12 @@ var ForeignKeys = []string{
 	"roomage_roomage_rent",
 	"user_user_rent",
 }
+
+var (
+	// RentAgeValidator is a validator for the "RentAge" field. It is called by the builders before save.
+	RentAgeValidator func(string) error
+	// CidUserValidator is a validator for the "CidUser" field. It is called by the builders before save.
+	CidUserValidator func(string) error
+	// RentDateValidator is a validator for the "RentDate" field. It is called by the builders before save.
+	RentDateValidator func(string) error
+)

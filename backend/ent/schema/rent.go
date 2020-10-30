@@ -16,11 +16,11 @@ type Rent struct {
 func (Rent) Fields() []ent.Field {
 	return []ent.Field{
 
-		field.String("RentAge"),
+		field.String("RentAge").NotEmpty(),
 
-		field.String("CidUser"),
+		field.String("CidUser").NotEmpty(),
 		
-		field.String("RentDate"),
+		field.String("RentDate").NotEmpty(),
 	}
 }
 

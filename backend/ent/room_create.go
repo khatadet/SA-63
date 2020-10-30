@@ -4,6 +4,7 @@ package ent
 
 import (
 	"context"
+	"errors"
 	"fmt"
 
 	"github.com/PON/app/ent/rent"
@@ -19,6 +20,12 @@ type RoomCreate struct {
 	config
 	mutation *RoomMutation
 	hooks    []Hook
+}
+
+// SetRoomName sets the RoomName field.
+func (rc *RoomCreate) SetRoomName(s string) *RoomCreate {
+	rc.mutation.SetRoomName(s)
+	return rc
 }
 
 // SetRoomRoomstatusID sets the RoomRoomstatus edge to RoomStatus by id.
@@ -81,6 +88,9 @@ func (rc *RoomCreate) Mutation() *RoomMutation {
 
 // Save creates the Room in the database.
 func (rc *RoomCreate) Save(ctx context.Context) (*Room, error) {
+	if _, ok := rc.mutation.RoomName(); !ok {
+		return nil, &ValidationError{Name: "RoomName", err: errors.New("ent: missing required field \"RoomName\"")}
+	}
 	var (
 		err  error
 		node *Room
@@ -141,6 +151,14 @@ func (rc *RoomCreate) createSpec() (*Room, *sqlgraph.CreateSpec) {
 			},
 		}
 	)
+	if value, ok := rc.mutation.RoomName(); ok {
+		_spec.Fields = append(_spec.Fields, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: room.FieldRoomName,
+		})
+		r.RoomName = value
+	}
 	if nodes := rc.mutation.RoomRoomstatusIDs(); len(nodes) > 0 {
 		edge := &sqlgraph.EdgeSpec{
 			Rel:     sqlgraph.M2O,

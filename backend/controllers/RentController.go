@@ -45,7 +45,8 @@ type Rent struct {
 // @Router /rents [post]
 func (ctl *RentController) CreateRent(c *gin.Context) {
 	obj := Rent{}
-	if err := c.ShouldBind(&obj); err != nil {
+	if err := c.ShouldBind(&obj); 
+	err != nil {
 		c.JSON(400, gin.H{
 			"error": "rent binding failed",
 		})

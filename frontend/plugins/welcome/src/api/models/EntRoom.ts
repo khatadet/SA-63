@@ -27,6 +27,12 @@ import {
  */
 export interface EntRoom {
     /**
+     * RoomName holds the value of the "RoomName" field.
+     * @type {string}
+     * @memberof EntRoom
+     */
+    roomName?: string;
+    /**
      * 
      * @type {EntRoomEdges}
      * @memberof EntRoom
@@ -50,6 +56,7 @@ export function EntRoomFromJSONTyped(json: any, ignoreDiscriminator: boolean): E
     }
     return {
         
+        'roomName': !exists(json, 'RoomName') ? undefined : json['RoomName'],
         'edges': !exists(json, 'edges') ? undefined : EntRoomEdgesFromJSON(json['edges']),
         'id': !exists(json, 'id') ? undefined : json['id'],
     };
@@ -64,6 +71,7 @@ export function EntRoomToJSON(value?: EntRoom | null): any {
     }
     return {
         
+        'RoomName': value.roomName,
         'edges': EntRoomEdgesToJSON(value.edges),
         'id': value.id,
     };

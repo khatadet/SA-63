@@ -16,7 +16,7 @@ type RoomStatus struct {
 func (RoomStatus) Fields() []ent.Field {
 	return []ent.Field{
 
-		field.String("RoomStatus"),
+		field.String("RoomStatus").Unique(),
 	
     }
 }

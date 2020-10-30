@@ -11,20 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import { DefaultApi } from '../../api/apis';
 import { EntRent } from '../../api/models/EntRent';
-/*
-import { Link as RouterLink } from 'react-router-dom';
 
-import Button from '@material-ui/core/Button';
-
-import {
-  Content,
-  Header,
-  Page,
-  pageTheme,
-  ContentHeader,
-  Link,
- } from '@backstage/core';
- */
 const useStyles = makeStyles({
  table: {
    minWidth: 650,
@@ -37,7 +24,7 @@ export default function ComponentsTable() {
  const classes = useStyles();
  const api = new DefaultApi();
  const [Rents, setRents] = useState<EntRent[]>(Array);
- //const [User, setUser] = useState(Array);
+
 
 
 
@@ -50,7 +37,7 @@ export default function ComponentsTable() {
   setRents(res);
 };
 
-console.log(Rents)
+//console.log(Rents)
 
 
  useEffect(() => {
@@ -78,7 +65,7 @@ console.log(Rents)
            <TableCell align="center">ชื่อผู้พักอาศัย</TableCell>
            <TableCell align="center">เลขห้อง</TableCell>
            <TableCell align="center">ระยะเวลาในสัญญา</TableCell>
-           <TableCell align="center">วันทำสัญญา</TableCell>
+           <TableCell align="center">วันทำสัญญา(ปี-เดือน-วัน)</TableCell>
            <TableCell align="center">Manage</TableCell>
            
          </TableRow>
@@ -90,7 +77,7 @@ console.log(Rents)
            <TableRow>
              <TableCell align="center">{item.id}</TableCell>
              <TableCell align="center">{item.edges.rentUser.nAME}</TableCell>
-             <TableCell align="center">{item.edges.rentRoom.id}</TableCell>
+             <TableCell align="center">{item.edges.rentRoom.roomName}</TableCell>
              
              <TableCell align="center">{item.rentAge} {item.edges.rentRoomage.text}</TableCell>
              <TableCell align="center">{item.rentDate}</TableCell>

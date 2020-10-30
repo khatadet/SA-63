@@ -11,7 +11,7 @@ var (
 	// InsurancesColumns holds the columns for the "insurances" table.
 	InsurancesColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeInt, Increment: true},
-		{Name: "insurance", Type: field.TypeInt},
+		{Name: "insurance", Type: field.TypeInt, Unique: true},
 	}
 	// InsurancesTable holds the schema information for the "insurances" table.
 	InsurancesTable = &schema.Table{
@@ -70,6 +70,7 @@ var (
 	// RoomsColumns holds the columns for the "rooms" table.
 	RoomsColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeInt, Increment: true},
+		{Name: "room_name", Type: field.TypeString, Unique: true},
 		{Name: "room_status_roomstatus_room", Type: field.TypeInt, Nullable: true},
 		{Name: "room_type_roomtype_room", Type: field.TypeInt, Nullable: true},
 	}
@@ -81,14 +82,14 @@ var (
 		ForeignKeys: []*schema.ForeignKey{
 			{
 				Symbol:  "rooms_room_status_RoomstatusRoom",
-				Columns: []*schema.Column{RoomsColumns[1]},
+				Columns: []*schema.Column{RoomsColumns[2]},
 
 				RefColumns: []*schema.Column{RoomStatusColumns[0]},
 				OnDelete:   schema.SetNull,
 			},
 			{
 				Symbol:  "rooms_room_types_RoomtypeRoom",
-				Columns: []*schema.Column{RoomsColumns[2]},
+				Columns: []*schema.Column{RoomsColumns[3]},
 
 				RefColumns: []*schema.Column{RoomTypesColumns[0]},
 				OnDelete:   schema.SetNull,
@@ -98,7 +99,7 @@ var (
 	// RoomStatusColumns holds the columns for the "room_status" table.
 	RoomStatusColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeInt, Increment: true},
-		{Name: "room_status", Type: field.TypeString},
+		{Name: "room_status", Type: field.TypeString, Unique: true},
 	}
 	// RoomStatusTable holds the schema information for the "room_status" table.
 	RoomStatusTable = &schema.Table{
@@ -110,8 +111,8 @@ var (
 	// RoomTypesColumns holds the columns for the "room_types" table.
 	RoomTypesColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeInt, Increment: true},
-		{Name: "room_type", Type: field.TypeString},
-		{Name: "cost", Type: field.TypeInt},
+		{Name: "room_type", Type: field.TypeString, Unique: true},
+		{Name: "cost", Type: field.TypeInt, Unique: true},
 	}
 	// RoomTypesTable holds the schema information for the "room_types" table.
 	RoomTypesTable = &schema.Table{
@@ -123,8 +124,8 @@ var (
 	// RoomagesColumns holds the columns for the "roomages" table.
 	RoomagesColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeInt, Increment: true},
-		{Name: "room_age", Type: field.TypeInt},
-		{Name: "text", Type: field.TypeString},
+		{Name: "room_age", Type: field.TypeInt, Unique: true},
+		{Name: "text", Type: field.TypeString, Unique: true},
 	}
 	// RoomagesTable holds the schema information for the "roomages" table.
 	RoomagesTable = &schema.Table{
@@ -136,7 +137,7 @@ var (
 	// UsersColumns holds the columns for the "users" table.
 	UsersColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeInt, Increment: true},
-		{Name: "user_email", Type: field.TypeString},
+		{Name: "user_email", Type: field.TypeString, Unique: true},
 		{Name: "name", Type: field.TypeString},
 		{Name: "user_status_userstatus_user", Type: field.TypeInt, Nullable: true},
 	}
@@ -158,7 +159,7 @@ var (
 	// UserStatusColumns holds the columns for the "user_status" table.
 	UserStatusColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeInt, Increment: true},
-		{Name: "user_status", Type: field.TypeString},
+		{Name: "user_status", Type: field.TypeString, Unique: true},
 	}
 	// UserStatusTable holds the schema information for the "user_status" table.
 	UserStatusTable = &schema.Table{

@@ -7,6 +7,8 @@ const (
 	Label = "room"
 	// FieldID holds the string denoting the id field in the database.
 	FieldID = "id"
+	// FieldRoomName holds the string denoting the roomname field in the database.
+	FieldRoomName = "room_name"
 
 	// EdgeRoomRoomstatus holds the string denoting the roomroomstatus edge name in mutations.
 	EdgeRoomRoomstatus = "RoomRoomstatus"
@@ -43,6 +45,7 @@ const (
 // Columns holds all SQL columns for room fields.
 var Columns = []string{
 	FieldID,
+	FieldRoomName,
 }
 
 // ForeignKeys holds the SQL foreign-keys that are owned by the Room type.

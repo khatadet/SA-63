@@ -1658,6 +1658,10 @@ var doc = `{
         "ent.Room": {
             "type": "object",
             "properties": {
+                "RoomName": {
+                    "description": "RoomName holds the value of the \"RoomName\" field.",
+                    "type": "string"
+                },
                 "edges": {
                     "description": "Edges holds the relations/edges for other nodes in the graph.\nThe values are being populated by the RoomQuery when eager-loading is set.",
                     "type": "object",

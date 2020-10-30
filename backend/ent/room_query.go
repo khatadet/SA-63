@@ -329,6 +329,19 @@ func (rq *RoomQuery) WithRoomRent(opts ...func(*RentQuery)) *RoomQuery {
 
 // GroupBy used to group vertices by one or more fields/columns.
 // It is often used with aggregate functions, like: count, max, mean, min, sum.
+//
+// Example:
+//
+//	var v []struct {
+//		RoomName string `json:"RoomName,omitempty"`
+//		Count int `json:"count,omitempty"`
+//	}
+//
+//	client.Room.Query().
+//		GroupBy(room.FieldRoomName).
+//		Aggregate(ent.Count()).
+//		Scan(ctx, &v)
+//
 func (rq *RoomQuery) GroupBy(field string, fields ...string) *RoomGroupBy {
 	group := &RoomGroupBy{config: rq.config}
 	group.fields = append([]string{field}, fields...)
@@ -342,6 +355,17 @@ func (rq *RoomQuery) GroupBy(field string, fields ...string) *RoomGroupBy {
 }
 
 // Select one or more fields from the given query.
+//
+// Example:
+//
+//	var v []struct {
+//		RoomName string `json:"RoomName,omitempty"`
+//	}
+//
+//	client.Room.Query().
+//		Select(room.FieldRoomName).
+//		Scan(ctx, &v)
+//
 func (rq *RoomQuery) Select(field string, fields ...string) *RoomSelect {
 	selector := &RoomSelect{config: rq.config}
 	selector.fields = append([]string{field}, fields...)

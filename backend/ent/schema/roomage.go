@@ -15,8 +15,8 @@ type Roomage struct {
 func (Roomage) Fields() []ent.Field {
 	return []ent.Field{
 
-		field.Int("RoomAge"),
-		field.String("Text"),
+		field.Int("RoomAge").Unique(),
+		field.String("Text").Unique(),
 	}
 }
 

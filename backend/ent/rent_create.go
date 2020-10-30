@@ -127,11 +127,26 @@ func (rc *RentCreate) Save(ctx context.Context) (*Rent, error) {
 	if _, ok := rc.mutation.RentAge(); !ok {
 		return nil, &ValidationError{Name: "RentAge", err: errors.New("ent: missing required field \"RentAge\"")}
 	}
+	if v, ok := rc.mutation.RentAge(); ok {
+		if err := rent.RentAgeValidator(v); err != nil {
+			return nil, &ValidationError{Name: "RentAge", err: fmt.Errorf("ent: validator failed for field \"RentAge\": %w", err)}
+		}
+	}
 	if _, ok := rc.mutation.CidUser(); !ok {
 		return nil, &ValidationError{Name: "CidUser", err: errors.New("ent: missing required field \"CidUser\"")}
 	}
+	if v, ok := rc.mutation.CidUser(); ok {
+		if err := rent.CidUserValidator(v); err != nil {
+			return nil, &ValidationError{Name: "CidUser", err: fmt.Errorf("ent: validator failed for field \"CidUser\": %w", err)}
+		}
+	}
 	if _, ok := rc.mutation.RentDate(); !ok {
 		return nil, &ValidationError{Name: "RentDate", err: errors.New("ent: missing required field \"RentDate\"")}
+	}
+	if v, ok := rc.mutation.RentDate(); ok {
+		if err := rent.RentDateValidator(v); err != nil {
+			return nil, &ValidationError{Name: "RentDate", err: fmt.Errorf("ent: validator failed for field \"RentDate\": %w", err)}
+		}
 	}
 	var (
 		err  error

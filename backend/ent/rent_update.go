@@ -156,6 +156,21 @@ func (ru *RentUpdate) ClearRentRoomage() *RentUpdate {
 
 // Save executes the query and returns the number of rows/vertices matched by this operation.
 func (ru *RentUpdate) Save(ctx context.Context) (int, error) {
+	if v, ok := ru.mutation.RentAge(); ok {
+		if err := rent.RentAgeValidator(v); err != nil {
+			return 0, &ValidationError{Name: "RentAge", err: fmt.Errorf("ent: validator failed for field \"RentAge\": %w", err)}
+		}
+	}
+	if v, ok := ru.mutation.CidUser(); ok {
+		if err := rent.CidUserValidator(v); err != nil {
+			return 0, &ValidationError{Name: "CidUser", err: fmt.Errorf("ent: validator failed for field \"CidUser\": %w", err)}
+		}
+	}
+	if v, ok := ru.mutation.RentDate(); ok {
+		if err := rent.RentDateValidator(v); err != nil {
+			return 0, &ValidationError{Name: "RentDate", err: fmt.Errorf("ent: validator failed for field \"RentDate\": %w", err)}
+		}
+	}
 
 	var (
 		err      error
@@ -528,6 +543,21 @@ func (ruo *RentUpdateOne) ClearRentRoomage() *RentUpdateOne {
 
 // Save executes the query and returns the updated entity.
 func (ruo *RentUpdateOne) Save(ctx context.Context) (*Rent, error) {
+	if v, ok := ruo.mutation.RentAge(); ok {
+		if err := rent.RentAgeValidator(v); err != nil {
+			return nil, &ValidationError{Name: "RentAge", err: fmt.Errorf("ent: validator failed for field \"RentAge\": %w", err)}
+		}
+	}
+	if v, ok := ruo.mutation.CidUser(); ok {
+		if err := rent.CidUserValidator(v); err != nil {
+			return nil, &ValidationError{Name: "CidUser", err: fmt.Errorf("ent: validator failed for field \"CidUser\": %w", err)}
+		}
+	}
+	if v, ok := ruo.mutation.RentDate(); ok {
+		if err := rent.RentDateValidator(v); err != nil {
+			return nil, &ValidationError{Name: "RentDate", err: fmt.Errorf("ent: validator failed for field \"RentDate\": %w", err)}
+		}
+	}
 
 	var (
 		err  error

@@ -65,6 +65,7 @@ type Rooms struct {
 type Room struct {
 	Type   int
 	Status int
+	RoomName string
 }
 
 
@@ -148,8 +149,12 @@ func main() {
 	// Set Users Data
 	users := Users{
 		User: []User{
-			User{"Chanwit Kaewkasi", "chanwit@gmail.com", 1},
-			User{"Name Surname", "me@example.com", 2},
+			User{"Khatadet khianchainat", "B6103866@gmail.com", 1},
+			User{"nara haru", "c101@example.com", 2},
+			User{"morani rode", "c102@example.com", 2},
+			User{"faratell yova", "c103@example.com", 2},
+			User{"pulla visan", "c104@example.com", 2},
+			User{"omaha yad", "c104@example.com", 2},
 		},
 	}
 
@@ -229,9 +234,9 @@ func main() {
 	// Set room Data
 	room := Rooms{
 		Room: []Room{
-			Room{1, 1},
-			Room{1, 1},
-			Room{1, 1},
+			Room{1, 1,"101"},
+			Room{1, 1,"102"},
+			Room{1, 1,"103"},
 		},
 	}
 	for _, y := range room.Room {
@@ -260,6 +265,7 @@ func main() {
 			Create().
 			SetRoomRoomstatus(RoomStatus).
 			SetRoomRoomtype(RoomType).
+			SetRoomName(y.RoomName).
 			Save(context.Background())
 	}
 

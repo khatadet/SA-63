@@ -17,7 +17,7 @@ func (Insurance) Fields() []ent.Field {
 	return []ent.Field{
 
 
-		field.Int("Insurance"),
+		field.Int("Insurance").Unique(),
     }
 }
 
